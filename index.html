@@ -5,12 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="reset css" href="./reset.css">
         <link rel="stylesheet" href="./style.css">
-
+        <title>Code Quiz</title>
     </head>
     <body>
         <header>
-             <a class = scores href="">View Highscores</a>
-             <h3 class="time">time: 80</h3>
+             <a class = scores href="#HighscoresID">View Highscores</a>
+             <h3 class="time">Timer</h3>
          </header>
     <section>
         <div class="introduction">
@@ -82,7 +82,18 @@
             <li class="stats"></li>
         </ul>
         <p class="initialsPrompt">Enter your initials here:</p>
-        <input class="initials" type="text">
+        <input class="initials" type="text"> 
+        <button class="submitBtn">Submit</button>
+    </section>
+
+    <section class="Q7" id ="HighscoresID">
+        <h3 class="Highscores">Highscore Records</h3>
+        <ul>
+            <li class="stats"></li>
+        </ul>
+        <p class="initialsPrompt">Enter your initials here:</p>
+        <input class="initials" type="text"> 
+        <button class="submitBtn">Submit</button>
     </section>
 
 

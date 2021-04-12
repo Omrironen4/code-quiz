@@ -10,7 +10,29 @@ var question6 = document.querySelector(".Q6");
 var options = document.querySelectorAll(".options");
 var currentQuestion = 1;
 var timeLeft = count
-var count = 19;
+var count = 60;
+var highscores = document.querySelector(".Q6")
+var highscoresAnchor = document.querySelector(".scores")
+var scores = document.querySelector(".initials")
+var scoresBtn = document.querySelector(".submitBtn")
+
+
+highscoresAnchor.addEventListener("click", function(event){
+    if (event.target) {
+            timeEl.style.display = "none"
+            highscores.style.display = "block";
+            introDiv.style.display = "none";
+            question1.style.display = "none";
+            question2.style.display = "none";
+            question3.style.display = "none";
+            question4.style.display = "none";
+            question5.style.display = "none";
+            question6.style.display = "none";
+    }
+    var scoresList = []
+    scoresList.push(scores.value)
+     
+})
 
 
 var startClick = startBtn.addEventListener("click", function (event) {
@@ -20,11 +42,17 @@ var startClick = startBtn.addEventListener("click", function (event) {
         question1.style.display = "block";
     }
     var timer = setInterval(function () {
-        timeEl.textContent = (`time: ${count}`);
-        count--;
-        if (count === 0) {
-            clearInterval(timer);
+        // timeEl.textContent = (`${count} seco`);
+        // count--;
+        if (count > 1) {
+            timeEl.textContent = (`${count} seconds left`);
+            count--;
+        } else if (count === 1) {
+            timeEl.textContent = (`${count} second left`);
+            count--;
+        } else if (count === 0) {
             var timeUp = timeEl.innerHTML = "time is up!";
+            clearInterval(timer);
             if (timeUp) {
             question1.style.display = "none";
             question2.style.display = "none";
@@ -43,13 +71,7 @@ for (var i = 0; i < options.length; i++) {
     options[i].addEventListener("click", function (event) {
         var userChoice = event.target.getAttribute("answer");
 
-        if (userChoice === "wrong") {
-            count = count - 15;
-        }
         // if userChoice is wrong, subtract 10 from count 
-
-
-
         currentQuestion++
 
         if (currentQuestion === 1) {
@@ -68,9 +90,25 @@ for (var i = 0; i < options.length; i++) {
             question5.style.display = "block";
         }
 
+        if (userChoice === "wrong" && count <= 15) {
+            question1.style.display = "none";
+            question2.style.display = "none";
+            question3.style.display = "none";
+            question4.style.display = "none";
+            question5.style.display = "none";
+            question6.style.display = "block";
+            timeEl.style.display = "none";
+            !startClick
+        } 
     })
-
 }
+
+// {/* <input class="initials" type="text"> 
+//         <button class="submitBtn">Submit</button> */}
+
+
+
+
 
 
 

@@ -16,7 +16,9 @@
 .Q6 {
     display: none;
 }
-
+.Q7 {
+    display: none;
+}
 .startBtn-pos {
     display: block;
     padding: 10px;
@@ -112,4 +114,11 @@ input {
     top: 74px;
     left: 250px;
     color: steelblue;
+}
+
+.submitBtn {
+    position: absolute;
+    top: 207px;
+    left: 657px;
+    font-size: larger;
 }
