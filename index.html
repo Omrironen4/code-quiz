@@ -10,60 +10,68 @@
     <body>
         <header>
              <a class = scores href="">View Highscores</a>
-             <h3 class="time"><span>time: 100</span></h3>
+             <h3 class="time">time: 80</h3>
          </header>
     <section>
-        <h3 class="CQC">Coding Quiz Challenge</h3>
-        <p class="prompt">Try answering the following questions to your best abillities. Answer within the time limit. Keep in mind that incorrect answers will be penalized by deducting 10 seconds from the timer. </p>
+        <div class="introduction">
+             <h3 class="CQC">Coding Quiz Challenge</h3>
+             <p class="prompt">Try answering the following questions to your best abillities. Answer within the time limit. Keep in mind that incorrect answers will be penalized by deducting 10 seconds from the timer. </p>
+             <button class="startBtn startBtn-pos">Start Quiz</button>
+        </div>
     </section>
-    <button class="startBtn startBtn-pos">Start Quiz</button>
+    
 
     <section class="Q1">
-        <p>Asking question here 1</p>
+        <h3 class="question">JQuerry is considered to be a library for which coding language?</h3>
              <div>
-                 <ol>
-                        <li>Answer Choice 1</li>
-                        <li>Answer Choice 2</li>
-                        <li>Answer Choice 3</li>
-                        <li>Answer Choice 4</li>
-                 </ol>
+                <ul>
+                    <li><button answer="wrong" class="options">HTML</button></li>
+                    <li><button answer="wrong" class="options">CSS</button></li>
+                    <li><button answer="correct" class="options">JAVASCRIPT</button></li>
+                    <li><button answer="wrong" class="options">BOOTSTRAP</button></li>
+                </ul>
              </div>
     </section>
 
     <section class="Q2">
-        <p>Asking question here 2</p>
+        <h3 class="question">HTML is the basic structure of webpages</h3>
         <div>
-            <ol>
-                   <li>Answer Choice 1</li>
-                   <li>Answer Choice 2</li>
-                   <li>Answer Choice 3</li>
-                   <li>Answer Choice 4</li>
-            </ol>
+            <ul>
+                <li><button answer="right" class="options">True</button></li>
+                <li><button answer="wrong" class="options">False</button></li>
+            </ul>
         </div>
     </section>
 
     <section class="Q3">
-        <p>Asking question here 3</p>
+        <h3 class="question">Which one of these is considered a framework?</h3>
         <div>
-            <ol>
-                   <li>Answer Choice 1</li>
-                   <li>Answer Choice 2</li>
-                   <li>Answer Choice 3</li>
-                   <li>Answer Choice 4</li>
-            </ol>
+            <ul>
+                <li><button answer="wrong" class="options">HTML</button></li>
+                <li><button answer="wrong" class="options">CSS</button></li>
+                <li><button answer="wrong" class="options">JAVASCRIPT</button></li>
+                <li><button answer="correct" class="options">BOOTSTRAP</button></li>
+            </ul>
         </div>
     </section>
 
     <section class="Q4">
-        <p>Asking question here 2</p>
+        <h3 class="question">Which is a good representation of a boolean?</h3>
         <div>
-            <ol>
-                   <li>Answer Choice 1</li>
-                   <li>Answer Choice 2</li>
-                   <li>Answer Choice 3</li>
-                   <li>Answer Choice 4</li>
-            </ol>
+            <ul>
+                <li><button answer="correct" class="options">True/False</button></li>
+                <li><button answer="wrong" class="options">if statements</button></li>
+                <li><button answer="wrong" class="options">Numbers</button></li>
+                <li><button answer="wrong" class="options">Prevent default</button></li>
+            </ul>
         </div>
+    </section>
+
+    <section class="Q5">
+        <h3 class="question">Congratulations on finishing on time!</h3>
+        <ul>
+            <li class="stats"></li>
+        </ul>
     </section>
 
 
