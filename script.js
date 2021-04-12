@@ -6,10 +6,11 @@ var question2 = document.querySelector(".Q2");
 var question3 = document.querySelector(".Q3");
 var question4 = document.querySelector(".Q4");
 var question5 = document.querySelector(".Q5");
+var question6 = document.querySelector(".Q6");
 var options = document.querySelectorAll(".options");
 var currentQuestion = 1;
 var timeLeft = count
-var count = 79;
+var count = 19;
 
 
 var startClick = startBtn.addEventListener("click", function (event) {
@@ -23,9 +24,18 @@ var startClick = startBtn.addEventListener("click", function (event) {
         count--;
         if (count === 0) {
             clearInterval(timer);
-            timeEl.innerHTML = "time is up!";
+            var timeUp = timeEl.innerHTML = "time is up!";
+            if (timeUp) {
+            question1.style.display = "none";
+            question2.style.display = "none";
+            question3.style.display = "none";
+            question4.style.display = "none";
+            question5.style.display = "none";
+            question6.style.display = "block";
+            }
         }
-    }, 1000)
+    }, 1000);
+    
 })
 
 
@@ -53,10 +63,9 @@ for (var i = 0; i < options.length; i++) {
         } else if (currentQuestion === 4) {
             question3.style.display = "none";
             question4.style.display = "block";
-        } else if (currentQuestion === 5) {
+        } else if (currentQuestion === 5 && count>0) {
             question4.style.display = "none";
             question5.style.display = "block";
-            timerEl.style.display = "none"
         }
 
     })

@@ -13,6 +13,9 @@
 .Q5 {
     display: none;
 }
+.Q6 {
+    display: none;
+}
 
 .startBtn-pos {
     display: block;
@@ -85,4 +88,28 @@ ul {
 
 .introduction {
     display: block;
+}
+
+input {
+    position: absolute;
+    top: 222px;
+    left: 490px;
+}
+
+.initialsPrompt {
+    position: absolute;
+    top: 200px;
+    left: 277px;
+    font-weight: 600;
+    color: darkblue;
+    font-size: 20px;
+}
+
+.congratulations {
+    display: block;
+    font-size: 36px;
+    position: absolute;
+    top: 74px;
+    left: 250px;
+    color: steelblue;
 }
