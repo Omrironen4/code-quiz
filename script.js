@@ -9,12 +9,34 @@ var question5 = document.querySelector(".Q5");
 var question6 = document.querySelector(".Q6");
 var options = document.querySelectorAll(".options");
 var currentQuestion = 1;
-var timeLeft = count
+var timeLeft = count;
+var timer;
 var count = 60;
-var highscores = document.querySelector(".Q6")
+var highscores = document.querySelector(".Q7")
 var highscoresAnchor = document.querySelector(".scores")
-var scores = document.querySelector(".initials")
-var scoresBtn = document.querySelector(".submitBtn")
+var initials1 = document.querySelector("#initials1")
+var initials2 = document.querySelector("#initials2")
+var button1 = document.querySelector("#button1")
+var button2 = document.querySelector("#button2")
+
+
+var score = 0;
+
+var scoresLog = JSON.parse(localStorage.getItem("scores"))||[] 
+
+button1.addEventListener("click", function(event){
+    event.preventDefault();
+    var initialsOne = initials1.value;
+    console.log(initialsOne, score);
+    var input = {
+        player: initialsOne,
+        score:  score,
+    }
+    scoresLog.push(input);
+    localStorage.setItem("scores",JSON.stringify(scoresLog));
+})
+
+
 
 
 highscoresAnchor.addEventListener("click", function(event){
@@ -29,8 +51,12 @@ highscoresAnchor.addEventListener("click", function(event){
             question5.style.display = "none";
             question6.style.display = "none";
     }
-    var scoresList = []
-    scoresList.push(scores.value)
+        
+        for (var i=0; i<scoresLog.length;i++){
+            var li = document.createElement("li");
+            li.textContent = `Player: ${scoresLog[i].player} Score: ${scoresLog[i].score}`;
+            document.querySelector("#stats").append(li);
+        }
      
 })
 
@@ -41,7 +67,7 @@ var startClick = startBtn.addEventListener("click", function (event) {
     } if (event.target) {
         question1.style.display = "block";
     }
-    var timer = setInterval(function () {
+     timer = setInterval(function () {
         // timeEl.textContent = (`${count} seco`);
         // count--;
         if (count > 1) {
@@ -70,8 +96,7 @@ var startClick = startBtn.addEventListener("click", function (event) {
 for (var i = 0; i < options.length; i++) {
     options[i].addEventListener("click", function (event) {
         var userChoice = event.target.getAttribute("answer");
-
-        // if userChoice is wrong, subtract 10 from count 
+ 
         currentQuestion++
 
         if (currentQuestion === 1) {
@@ -88,8 +113,10 @@ for (var i = 0; i < options.length; i++) {
         } else if (currentQuestion === 5 && count>0) {
             question4.style.display = "none";
             question5.style.display = "block";
-        }
+            clearInterval(timer);
+        } 
 
+        
         if (userChoice === "wrong" && count <= 15) {
             question1.style.display = "none";
             question2.style.display = "none";
@@ -98,8 +125,12 @@ for (var i = 0; i < options.length; i++) {
             question5.style.display = "none";
             question6.style.display = "block";
             timeEl.style.display = "none";
-            !startClick
-        } 
+            count = count -15;
+        } else if (userChoice==="wrong"){
+            count = count-15;
+        } else {
+            score ++;
+        }
     })
 }
 
