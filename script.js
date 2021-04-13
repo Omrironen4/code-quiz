@@ -18,9 +18,14 @@ var currentQuestion = 1; // this is to be used in the current question for loop
 var timer; // this allows the timer set interval function to be used globally 
 var count = 60; // this makes the count beging counting down from 60
 var goToScores;
+var homeBtn = document.querySelector(".homeBtn")
 
 
 var score = 0; //Makes score equal to zero before starting a new quiz.
+
+homeBtn.addEventListener("click", function(event){ // this is a home button when the user reaches the end of the quiz. 
+    document.location.reload(event)
+})
 
 var scoresLog = JSON.parse(localStorage.getItem("scores"))||[] //scoresLog parses localStorage item of scores.
 
@@ -53,6 +58,7 @@ highscoresButton.addEventListener("click", function(event){  //adding event list
     if (event.target) { // if clicked, we hide all content except for the high scores content.
             timeEl.style.display = "none"
             highscores.style.display = "block";
+            highscoresButton.style.display = "none"
             introDiv.style.display = "none";
             question1.style.display = "none";
             question2.style.display = "none";
@@ -122,7 +128,8 @@ for (var i = 0; i < options.length; i++) { // for the options which is our answe
             clearInterval(timer);
             var goToScores = document.createElement("p"); //creating a p tag to diplay a message
             goToScores.textContent = ` After submiting your initials, click on the "view highscores" button to view the score log. Keep in mind that new logs are placed on the bottom!`;
-            document.querySelector(".guidence").append(goToScores) //appending the p tag
+            goToScores.setAttribute("style", "font-size: 30px; color: purple")
+            document.querySelector(".Q5").appendChild(goToScores) //appending the p tag
         } 
 
         // Here we say if the user chooses a wrong answer, and the time is below 15 seconds...
@@ -135,7 +142,6 @@ for (var i = 0; i < options.length; i++) { // for the options which is our answe
             question6.style.display = "block"; // we will show the section Q6 that they did not finish on time.
             timeEl.style.display = "none";
             count = count -15; 
-            document.querySelector(".guidence").append(goToScores)
         } else if (userChoice==="wrong"){ //if userchoise is wrong, and the timer is above 15 seconds we will deduct 15 seconds form the clock.
             count = count-15;
         } else { // otherwise, when they get the answer right, we will add a point to the score.
