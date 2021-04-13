@@ -3,6 +3,7 @@ In this homework assignment I will be making a fully functional quiz with a time
 This quiz is intended to replicate an interview test for a fellow full-stack web developer. 
 Of course, in a real interview the quiz would be more in depth and include more questions than this one, but the functionality is the same. 
 Hopefully you enjoy my quiz and choose all the correct answers 100%!
+Here is the link for my quiz: https://omrironen4.github.io/code-quiz-homework-4/
 
 <img width="1440" alt="Screen Shot 2021-04-12 at 11 03 00 PM" src="https://user-images.githubusercontent.com/72667204/114504233-689e0500-9be3-11eb-9831-7098c07d08e4.png">
 <img width="1440" alt="Screen Shot 2021-04-12 at 11 03 07 PM" src="https://user-images.githubusercontent.com/72667204/114504256-73589a00-9be3-11eb-8b60-9c8c19b79544.png">
