@@ -27,7 +27,7 @@ homeBtn.addEventListener("click", function(event){ // this is a home button when
     document.location.reload(event)
 })
 
-var scoresLog = JSON.parse(localStorage.getItem("scores"))||[] //scoresLog parses localStorage item of scores.
+var scoresLog = JSON.parse(localStorage.getItem("scores"))||[] //JSON parses(objectifies) the scores inside localStorage and gets the data into the variable scoresLog.
 
 button1.addEventListener("click", function(event){ // adding event listener to button 1 when clicked 
     event.preventDefault(); // prevents the refresh on the click of the button
