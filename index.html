@@ -7,11 +7,15 @@
         <link rel="stylesheet" href="./style.css">
         <title>Code Quiz</title>
     </head>
+
+    <!--BODY START-->
     <body>
         <header>
              <button class = "scores">View Highscores</button>
              <h3 class="time">Timer</h3>
          </header>
+
+    <!--INTRO START-->
     <section>
         <div class="introduction">
              <h3 class="CQC">Coding Quiz Challenge</h3>
@@ -19,8 +23,9 @@
              <button class="startBtn startBtn-pos">Start Quiz</button>
         </div>
     </section>
-    
+    <!--INTRO END-->
 
+    <!--QUESTION 1 START-->
     <section class="Q1">
         <h3 class="question">JQuerry is considered to be a library for which coding language?</h3>
              <div>
@@ -32,7 +37,9 @@
                 </ul>
              </div>
     </section>
+    <!--QUESTION 1 END-->
 
+    <!-- QUESTION 2 START -->
     <section class="Q2">
         <h3 class="question">HTML is the basic structure of webpages</h3>
         <div>
@@ -42,7 +49,9 @@
             </ul>
         </div>
     </section>
+    <!-- QUESTION 2 END -->
 
+    <!-- QUESTION 3 START -->
     <section class="Q3">
         <h3 class="question">Which one of these is considered a framework?</h3>
         <div>
@@ -54,7 +63,9 @@
             </ul>
         </div>
     </section>
+    <!-- QUESTION 3 END -->
 
+    <!-- QUESTION 4 START -->
     <section class="Q4">
         <h3 class="question">Which is a good representation of a boolean?</h3>
         <div>
@@ -66,7 +77,9 @@
             </ul>
         </div>
     </section>
+    <!-- QUESTION 4 END -->
 
+    <!-- FINISHED ON TIME SECTION START -->
     <section class="Q5">
         <h3 class="question congratulations">Congratulations! You finished before the timer hit zero!</h3>
         <ul>
@@ -76,7 +89,9 @@
         <input id="initials1" class="initials" type="text">
         <button id="button1" class="submitBtn">Submit</button>
     </section>
+    <!-- FINISHED ON TIME SECTION END -->
 
+    <!-- TIME IS UP SECTION START -->
     <section class="Q6">
         <h3 class="question loser" style="color: red;">Time's up!</h3>
         <ul>
@@ -87,14 +102,16 @@
         <button id="button2" class="submitBtn">Submit</button>
         <p class="guidance">After submiting your initials, click on the "view highscores" button to view the score log. Keep in mind that new logs are placed on the bottom!</p>
     </section>
+    <!-- TIME IS UP SECTION END -->
 
+    <!-- HIGHSCORES LIST START -->
     <section class="Q7" id ="HighscoresID">
         <h3 class="Highscores"></h3>
         <ul id="stats">
         </ul>
         <button class="homeBtn">Homepage</button>
-        
     </section>
+    <!-- HIGHSCORES LIST END -->
 
 
         
